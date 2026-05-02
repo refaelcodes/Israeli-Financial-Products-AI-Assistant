@@ -1,0 +1,32 @@
+{
+  "admin": {
+    "admin": "Admin",
+    "institutions": "Institutions",
+    "mappings": "Mappings",
+    "users": "Users"
+  },
+  "dashboards": {
+    "dashboards": "Dashboards",
+    "home": "Home"
+  },
+  "funds": {
+    "funds": "Funds",
+    "pensia": "Pensia",
+    "gemel": "Gemel"
+  },
+  "holdings": "Holdings Explorer",
+  "ingestion": "Ingestion Runs",
+  "questions": "Client Questions",
+  "reports": {
+    "reports": "Reports",
+    "quarterly": "Quarterly",
+    "yoy": "Year over Year",
+    "risk": "Risk"
+  },
+  "settings": {
+    "settings": "Settings",
+    "general": "General",
+    "appearance": "Appearance"
+  },
+  "validation": "Validation / Exceptions"
+}
