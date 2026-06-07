@@ -1,4 +1,4 @@
-# A RAG-Based Research Assistant
+# A NL-to-SQL-Based Research Assistant
 
 Research assistant for Israeli financial products. The app combines a Flask API, a SQLite-backed financial dataset, and a React/Vite frontend for holdings exploration, fund comparison, validation workflows, reports, and natural-language questions.
 
