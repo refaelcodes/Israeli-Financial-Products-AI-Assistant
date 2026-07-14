@@ -33,6 +33,6 @@ The frontend runs on `http://localhost:5173` and proxies API calls to the backen
 
 ## Data And Secrets
 
-API keys and account credentials are not stored in the repository. Configure AI access with environment variables such as `GEMINI_API_KEY`, `GOOGLE_API_KEY`, `OPENAI_API_KEY`, or `ANTHROPIC_API_KEY`.
+API keys and account credentials are not stored in the repository. The "Client Questions" natural-language feature runs in one of three modes (`AI_MODE`): `mock` (offline, no key — the default), `api` (Anthropic Claude Messages API, needs `ANTHROPIC_API_KEY`), or `sdk` (Claude Agent SDK via a local Claude subscription). The mode and API key can also be switched from the UI.
 
 The SQLite database is intentionally excluded from Git because it is large and may contain local data.

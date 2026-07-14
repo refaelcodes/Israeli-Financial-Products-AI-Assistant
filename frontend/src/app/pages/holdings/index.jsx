@@ -130,7 +130,7 @@ export default function HoldingsExplorer() {
             <p className="mt-1 text-sm text-gray-500 dark:text-dark-300">
               {loading
                 ? "Loading asset holdings from database..."
-                : `${data.length} holdings — live from fund_combined_db (27 asset tables)`}
+                : `${data.length} holdings — live from fund_combined_db (29 asset tables)`}
             </p>
           </div>
           <div className="flex items-center gap-2">

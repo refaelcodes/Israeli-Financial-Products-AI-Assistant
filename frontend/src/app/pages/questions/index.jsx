@@ -14,6 +14,7 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
 import { askQuestion } from "utils/apiService";
+import AiProviderPanel from "./AiProviderPanel";
 
 const statusConfig = {
   answered: { color: "success", Icon: CheckCircleIcon, label: "Answered" },
@@ -26,6 +27,7 @@ export default function ClientQuestions() {
   const [questions, setQuestions] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const [history, setHistory] = useState([]);
+  const [providerReady, setProviderReady] = useState(true);
 
   const defaultColDef = useMemo(() => ({
     sortable: true,
@@ -119,6 +121,9 @@ export default function ClientQuestions() {
           </div>
         </div>
 
+        {/* AI provider mode: Mock / Claude API / Claude SDK */}
+        <AiProviderPanel onReadyChange={setProviderReady} />
+
         {/* Ask a question */}
         <Card className="p-4">
           <div className="flex items-center gap-3">
@@ -129,7 +134,7 @@ export default function ClientQuestions() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              disabled={submitting}
+              disabled={submitting || !providerReady}
               className="flex-1 rounded-lg border border-gray-300 bg-white py-2.5 px-4 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-400 dark:border-dark-450 dark:bg-dark-700 dark:text-dark-50 disabled:opacity-50"
               dir="auto"
             />
@@ -138,12 +143,17 @@ export default function ClientQuestions() {
               color="primary"
               className="gap-1.5 shrink-0"
               onClick={handleAsk}
-              disabled={submitting || !inputValue.trim()}
+              disabled={submitting || !inputValue.trim() || !providerReady}
             >
               <PaperAirplaneIcon className="size-4" />
               {submitting ? "Asking..." : "Ask"}
             </Button>
           </div>
+          {!providerReady && (
+            <p className="mt-2 text-[11px] text-amber-600 dark:text-amber-400 pl-8">
+              Connect an AI provider above (or switch to Mock) to ask questions.
+            </p>
+          )}
           <p className="mt-2 text-[11px] text-gray-400 dark:text-dark-400 pl-8">
             Examples: &quot;מהן 10 הקרנות עם התשואה הגבוהה ביותר?&quot; · &quot;Total AUM by managing corporation&quot; · &quot;Top ETFs by fair value&quot;
           </p>

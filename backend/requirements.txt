@@ -1,3 +1,7 @@
 flask>=3.0
 flask-cors>=6.0
-httpx>=0.27
+pyjwt>=2.8
+# AI provider for "Client Questions" (NL -> SQL). Needed for AI_MODE=api.
+anthropic>=0.40
+# Optional — only for AI_MODE=sdk (Claude Agent SDK via your Claude subscription):
+# claude-agent-sdk>=0.1

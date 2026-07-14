@@ -24,10 +24,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Local database files
+# Local database files (fund data + auth users DB)
 backend/*.db
 backend/*.db-shm
 backend/*.db-wal
+
+# Local AI connection secrets (API key / sdk flag) — never commit
+backend/.local_credentials.json
 
 # Local media scratch files
 youtube_prompts.ass

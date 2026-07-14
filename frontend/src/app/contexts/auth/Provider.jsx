@@ -34,6 +34,7 @@ const reducerHandlers = {
     return {
       ...state,
       isLoading: true,
+      errorMessage: null,
     };
   },
 
@@ -152,6 +153,43 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const register = async ({ username, password, email, name }) => {
+    dispatch({
+      type: "LOGIN_REQUEST",
+    });
+
+    try {
+      const response = await axios.post("/register", {
+        username,
+        password,
+        email,
+        name,
+      });
+
+      const { authToken, user } = response.data;
+
+      if (!isString(authToken) && !isObject(user)) {
+        throw new Error("Response is not valid");
+      }
+
+      setSession(authToken);
+
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: {
+          user,
+        },
+      });
+    } catch (err) {
+      dispatch({
+        type: "LOGIN_ERROR",
+        payload: {
+          errorMessage: err,
+        },
+      });
+    }
+  };
+
   const logout = async () => {
     setSession(null);
     dispatch({ type: "LOGOUT" });
@@ -166,6 +204,7 @@ export function AuthProvider({ children }) {
       value={{
         ...state,
         login,
+        register,
         logout,
       }}
     >

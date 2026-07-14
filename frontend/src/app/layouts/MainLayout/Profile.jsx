@@ -14,6 +14,7 @@ import { Link } from "react-router";
 
 // Local Imports
 import { Avatar, AvatarDot, Button } from "components/ui";
+import { useAuthContext } from "app/contexts/auth/context";
 
 // ----------------------------------------------------------------------
 
@@ -45,6 +46,19 @@ const links = [
 ];
 
 export function Profile() {
+  const { user, logout } = useAuthContext();
+
+  const displayName = user?.name || user?.username || "User";
+  const initials = user?.initials
+    || displayName
+      .split(" ")
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase()
+    || "U";
+  const subtitle = user?.email || "Signed in";
+
   return (
     <Popover className="relative">
       <PopoverButton
@@ -53,7 +67,7 @@ export function Profile() {
         role="button"
         initialColor="primary"
         initialVariant="soft"
-        alt="Demo profile"
+        alt={displayName}
         indicator={
           <AvatarDot color="success" className="ltr:right-0 rtl:left-0" />
         }
@@ -61,7 +75,7 @@ export function Profile() {
           root: "cursor-pointer",
         }}
       >
-        DU
+        {initials}
       </PopoverButton>
       <Transition
         enter="duration-200 ease-out"
@@ -82,20 +96,20 @@ export function Profile() {
                   size={14}
                   initialColor="primary"
                   initialVariant="soft"
-                  alt="Demo profile"
+                  alt={displayName}
                 >
-                  DU
+                  {initials}
                 </Avatar>
                 <div>
                   <Link
                     className="hover:text-primary-600 focus:text-primary-600 dark:text-dark-100 dark:hover:text-primary-400 dark:focus:text-primary-400 text-base font-medium text-gray-700"
                     to="/settings/general"
                   >
-                    Demo User
+                    {displayName}
                   </Link>
 
                   <p className="dark:text-dark-300 mt-0.5 text-xs text-gray-400">
-                    Financial Analyst
+                    {subtitle}
                   </p>
                 </div>
               </div>
@@ -125,7 +139,13 @@ export function Profile() {
                   </Link>
                 ))}
                 <div className="px-4 pt-4">
-                  <Button className="w-full gap-2">
+                  <Button
+                    className="w-full gap-2"
+                    onClick={() => {
+                      close();
+                      logout();
+                    }}
+                  >
                     <ArrowLeftStartOnRectangleIcon className="size-4.5" />
                     <span>Logout</span>
                   </Button>

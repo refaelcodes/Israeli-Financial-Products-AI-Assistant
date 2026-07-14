@@ -34,6 +34,32 @@ export async function askQuestion(question, history = []) {
   });
 }
 
+// ─── AI provider mode (mock | api | sdk) ────────────────────
+export async function getAiConfig() {
+  return apiFetch("/ai/config");
+}
+
+export async function setAiConfig({ ai_mode, model } = {}) {
+  return apiFetch("/ai/config", {
+    method: "POST",
+    body: JSON.stringify({ ai_mode, model }),
+  });
+}
+
+export async function connectAi({ mode, apiKey, remember } = {}) {
+  return apiFetch("/ai/connect", {
+    method: "POST",
+    body: JSON.stringify({ mode, api_key: apiKey, remember }),
+  });
+}
+
+export async function disconnectAi(mode) {
+  return apiFetch("/ai/disconnect", {
+    method: "POST",
+    body: JSON.stringify({ mode }),
+  });
+}
+
 // ─── Database stats ─────────────────────────────────────────
 export async function getStats() {
   return apiFetch("/stats");
