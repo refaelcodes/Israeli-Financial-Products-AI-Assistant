@@ -244,6 +244,15 @@ export default function ClientQuestions() {
                       </div>
                     )}
 
+                    {/* Honest "no data" state — the query ran but found nothing.
+                        Better to say so than to imply an answer that isn't there. */}
+                    {q.status === "answered" && q.sql && !q.error && (!q.data || q.data.length === 0) && (
+                      <div className="mt-3 rounded-lg bg-gray-50 border border-gray-200 px-3 py-2 text-xs text-gray-500 dark:bg-dark-600 dark:border-dark-500 dark:text-dark-300">
+                        No matching rows — the database has no data that answers this
+                        question. The query above ran successfully and returned 0 rows.
+                      </div>
+                    )}
+
                     {/* Loading spinner */}
                     {q.status === "pending" && (
                       <div className="mt-3 flex items-center gap-2 text-xs text-gray-400">

@@ -98,10 +98,13 @@ forced via a single `run_sql_query` tool call, so the model returns exactly
   `PRAGMA query_only = ON`; only `SELECT` / `WITH` are allowed and a keyword
   blocklist rejects `INSERT/UPDATE/DELETE/DROP/ALTER/CREATE/PRAGMA`. A wrong SQL
   guess can read, never write.
-- **Every answer shows its SQL.** The generated query is displayed with the
-  results, so a human can verify what was actually asked of the data — no
-  "trust me" numbers. (The *Air Canada* chatbot case is a reminder of why an AI
-  answer needs an auditable source.)
+- **Every answer shows its SQL** — its source. The generated query is displayed
+  with the results, so a human can verify what was actually asked of the data —
+  no "trust me" numbers. (The *Air Canada* chatbot case is a reminder of why an
+  AI answer needs an auditable source.)
+- **Honest about "no answer."** If the query runs but returns nothing, the UI
+  says so plainly ("no matching rows") instead of implying an answer that isn't
+  in the data; SQL errors surface as a clear message, not a crash.
 - **JWT authentication** with hashed passwords (Werkzeug + PyJWT), stored in a
   separate `auth.db`.
 
