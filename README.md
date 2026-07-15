@@ -8,7 +8,14 @@ query**, runs it against a local dataset of ~24,000 fund records and 29
 asset-holding tables, and shows the exact query alongside live results — so every
 answer is auditable, not a black box.
 
+<!-- ▶ DEMO VIDEO PLACEHOLDER — once the 90-second demo is recorded (script: docs/demo-script.md):
+       1. export a short autoplay GIF to docs/demo.gif
+       2. replace the screenshot line below with a GIF linked to the video, e.g.:
+          [![Watch the 90-second demo](docs/demo.gif)](https://youtu.be/VIDEO_ID)
+     GitHub README does not embed <video>/YouTube players — a linked GIF is the reliable pattern. -->
 ![Client Questions — natural-language question, generated SQL, and live results](docs/screenshots/client-questions.png)
+
+▶️ **Demo video:** _coming soon — a 90-second walkthrough. Shot-by-shot script: [`docs/demo-script.md`](docs/demo-script.md)._
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
@@ -46,6 +53,19 @@ query + results** out.
 | Holdings Explorer | Funds (Gemel) |
 |---|---|
 | ![Holdings Explorer](docs/screenshots/holdings.png) | ![Gemel funds](docs/screenshots/funds-gemel.png) |
+
+## Try it · לנסות
+
+**No sign-up, no API key, no cloud.** Clone the repo, run the two commands below,
+and the app works end-to-end on the real dataset in **offline `mock` mode** —
+questions become SQL and return live results with **zero network calls**. Switch
+to Claude API or SDK any time from the UI.
+
+> **Why no public "live" link?** The dataset is a ~160 MB local database and the
+> assistant can process business data — a permanently-hosted public endpoint is
+> the wrong trade-off for a data tool (privacy + free-tier cold starts). The demo
+> is a **2-minute local run** (below), the screenshots above, and the walkthrough
+> video (script: [`docs/demo-script.md`](docs/demo-script.md)).
 
 ## Quickstart (2 terminals)
 
