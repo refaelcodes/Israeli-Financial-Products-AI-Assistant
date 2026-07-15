@@ -1,0 +1,39 @@
+1
+00:00:00,120 --> 00:00:08,346
+A question about pension funds, asked in plain Hebrew. Here is the answer, and the exact query behind it.
+
+2
+00:00:08,646 --> 00:00:17,346
+Israel's fund data is public, but it spans dozens of tables, Hebrew columns, and tens of thousands of rows.
+
+3
+00:00:17,646 --> 00:00:22,346
+One simple question means writing SQL by hand.
+
+4
+00:00:22,646 --> 00:00:26,346
+Now you just ask.
+
+5
+00:00:26,646 --> 00:00:34,846
+The assistant writes a read-only SQL query, and runs it on the database.
+
+6
+00:00:35,146 --> 00:00:44,846
+It shows you both: the numbers, and the query that produced them. Nothing is a black box.
+
+7
+00:00:45,146 --> 00:00:52,846
+Ask something the data cannot answer, and it says so. It never invents a number.
+
+8
+00:00:53,146 --> 00:00:58,846
+And it can only read your data, never change it.
+
+9
+00:00:59,146 --> 00:01:11,356
+Worried about your data? Run it fully offline, with no API key. Or use Claude's API, which does not train on your data. It stays yours.
+
+10
+00:01:11,656 --> 00:01:18,356
+Want this on your business data? I build these. Let's talk.

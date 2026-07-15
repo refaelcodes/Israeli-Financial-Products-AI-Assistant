@@ -9,6 +9,7 @@ import { LanguageSelector } from "components/template/LaguageSelector";
 import { Notifications } from "components/template/Notifications";
 import { Button } from "components/ui";
 import { SidebarToggleBtn } from "components/shared/SidebarToggleBtn";
+import { ThemeToggle } from "components/shared/ThemeToggle";
 import { useBreakpointsContext } from "app/contexts/breakpoint/context";
 import { Profile } from "../Profile";
 import { Search } from "components/template/Search";
@@ -76,6 +77,7 @@ export function Header() {
             )}
           />
         </div>
+        <ThemeToggle />
         <Notifications />
         <RightSidebar />
         <LanguageSelector />

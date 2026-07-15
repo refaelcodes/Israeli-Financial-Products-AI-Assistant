@@ -1,0 +1,13 @@
+{
+  "name": "israeli-funds-portfolio-video",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build-video.mjs"
+  },
+  "dependencies": {
+    "msedge-tts": "2.0.7",
+    "sharp": "0.34.5"
+  }
+}
