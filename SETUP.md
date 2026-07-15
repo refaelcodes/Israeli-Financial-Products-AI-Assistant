@@ -1,5 +1,16 @@
 # Fund Explorer - Setup Guide
 
+## One-click Windows launch
+
+Run `create-desktop-shortcut.ps1` once, or use the pre-created desktop shortcut
+**Israeli Funds AI Assistant**. One click starts the Flask backend and Vite
+frontend in the background, waits for both services, and opens
+`http://127.0.0.1:5173` in the default browser. Repeated clicks reuse the
+already-running services.
+
+The launcher is `start-app.ps1`. Startup errors are shown in a dialog and full
+logs are written to the git-ignored `logs/` directory.
+
 ## Prerequisites
 - **Node.js** 18+ (https://nodejs.org)
 - **Python** 3.10+ (https://python.org)

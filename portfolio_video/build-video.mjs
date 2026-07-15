@@ -479,7 +479,7 @@ async function ctaScene(output, caption, rtl) {
     ${textLines([rtl ? "אני בונה מערכות AI ונתונים שאפשר לבדוק ולסמוך עליהן." : "I build AI and data systems you can inspect and trust."], rtl ? 1715 : 205, 535, { size: 27, color: COLORS.muted, weight: 500, rtl })}
     ${pill(rtl ? 1320 : 205, 590, 395, cta, { fill: COLORS.blue, rtl, size: 29 })}
     ${textLines(["Refael Myshiakov"], rtl ? 1130 : 650, 623, { size: 28, weight: 720, rtl })}
-    ${textLines(["rbs2307@gmail.com  ·  github.com/refaelcodes"], rtl ? 1130 : 650, 670, { size: 23, color: COLORS.muted, weight: 500, rtl })}`;
+    ${textLines(["refael.mishiakov@gmail.com  ·  github.com/refaelcodes"], rtl ? 1130 : 650, 670, { size: 23, color: COLORS.muted, weight: 500, rtl })}`;
   await sharp(svgShell(body, caption, rtl)).png().toFile(output);
 }
 

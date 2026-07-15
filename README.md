@@ -64,6 +64,10 @@ to Claude API or SDK any time from the UI.
 
 ## Quickstart (2 terminals)
 
+**Windows one-click:** use the desktop shortcut **Israeli Funds AI Assistant**
+or run `powershell -ExecutionPolicy Bypass -File .\start-app.ps1`. It starts
+both services in the background and opens the app automatically.
+
 ```bash
 # 1. Backend — Flask API + SQLite  (http://localhost:5000)
 cd backend
