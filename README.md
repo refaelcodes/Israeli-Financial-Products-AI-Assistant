@@ -4,7 +4,7 @@
 
 A research assistant for Israeli pension (פנסיה) and provident (גמל) funds. Ask a
 question in Hebrew, Russian, or English; the app turns it into a **read-only SQL
-query**, runs it against a local dataset of ~375,000 fund records and 29
+query**, runs it against a local dataset of ~374,000 fund records and 29
 asset-holding tables, and shows the exact query alongside live results — so every
 answer is auditable, not a black box.
 
